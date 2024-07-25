@@ -4,7 +4,7 @@ SELECT
     M.release_date,
     M.duration,
     M.description,
-    json_build_object (
+    jsonb_build_object (
         'id',
         F.id,
         'file_name',
@@ -16,7 +16,7 @@ SELECT
         'url',
         F.url
     ) AS poster,
-    json_build_object (
+    jsonb_build_object (
         'id',
         D.id,
         'first_name',
@@ -24,7 +24,7 @@ SELECT
         'last_name',
         D.last_name,
         'photo',
-        json_build_object (
+        jsonb_build_object (
             'id',
             DF.id,
             'file_name',
@@ -37,8 +37,8 @@ SELECT
             DF.url
         )
     ) AS director,
-    json_agg (
-        json_build_object (
+    jsonb_agg (
+        DISTINCT jsonb_build_object (
             'id',
             A.id,
             'first_name',
@@ -46,7 +46,7 @@ SELECT
             'last_name',
             A.last_name,
             'photo',
-            json_build_object (
+            jsonb_build_object (
                 'id',
                 AF.id,
                 'file_name',
@@ -60,7 +60,7 @@ SELECT
             )
         )
     ) AS actors,
-    json_agg (json_build_object ('id', G.id, 'name', G.name)) AS genres
+    jsonb_agg (jsonb_build_object ('id', G.id, 'name', G.name)) AS genres
 FROM
     public."Movie" M
     JOIN public."File" F ON M.poster_id = F.id
