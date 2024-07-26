@@ -4,27 +4,27 @@
 erDiagram
     User {
         int id PK
-        string username
-        string first_name
-        string last_name
-        string email
-        string password
+        varchar username
+        varchar first_name
+        varchar last_name
+        varchar email
+        varchar password
         int avatar_id FK
         timestamp created_at
         timestamp updated_at
     }
     File {
         int id PK
-        string file_name
-        string mime_type
-        string key
-        string url
+        varchar file_name
+        varchar mime_type
+        varchar key
+        text url
         timestamp created_at
         timestamp updated_at
     }
     Movie {
         int id PK
-        string title
+        varchar title
         text description
         int budget
         date release_date
@@ -37,11 +37,11 @@ erDiagram
     }
     Person {
         int id PK
-        string first_name
-        string last_name
+        varchar first_name
+        varchar last_name
         text biography
         date date_of_birth
-        string gender
+        varchar gender
         int country_id FK
         int primary_photo_id FK
         timestamp created_at
@@ -49,9 +49,9 @@ erDiagram
     }
     Character {
         int id PK
-        string name
+        varchar name
         text description
-        string role
+        varchar role
         int movie_id FK
         int actor_id FK
         timestamp created_at
@@ -59,13 +59,13 @@ erDiagram
     }
     Genre {
         int id PK
-        string name
+        varchar name
         timestamp created_at
         timestamp updated_at
     }
     Country {
         int id PK
-        string name
+        varchar name
         timestamp created_at
         timestamp updated_at
     }
@@ -94,3 +94,4 @@ erDiagram
     Genre ||--|{ Movie_Genre : "is associated with"
     Movie ||--|{ Country : "is made in"
     Person ||--|{ Country : "is from"
+```
