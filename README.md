@@ -12,7 +12,6 @@
 1. Clone the repository:
     ```bash
     git clone https://github.com/kolibri753/BSA_JS-DB-SQL.git
-    cd movie_app
     ```
 
 2. Create a `.env` file with the following content:
@@ -37,6 +36,11 @@
     make seed
     ```
 
+6. Run queries:
+    ```bash
+    make run_queries
+    ```
+
 ### ER Diagram
 
 ![ER Diagram](./docs/er_diagram.md)
@@ -48,3 +52,8 @@ For a detailed description of the relationships between the tables, see [docs/re
 ### Queries
 
 SQL queries are located in the `db/queries/` directory.
+
+Run queries:
+```bash
+make run_queries
+```
