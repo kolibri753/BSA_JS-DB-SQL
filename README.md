@@ -41,6 +41,10 @@
 
 ![ER Diagram](./docs/er_diagram.md)
 
+### Database Relations
+
+For a detailed description of the relationships between the tables, see [docs/relations.md](./docs/relations.md).
+
 ### Queries
 
 SQL queries are located in the `db/queries/` directory.
